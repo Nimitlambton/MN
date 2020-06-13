@@ -9,18 +9,26 @@ import { Redirect } from 'react-router';
 
 class Buttons extends React.Component{
 
+
+
+
+
+
+
   
+  //   changeColor(id , _title){
+  //   if (id == 0){
 
 
-    changeColor(id , _title){
-    if (id == 0){
+  //     }   
 
-      
-      }   
-  }    
+  //     // onClick={this.changeColor.bind(this,this.props.id , this.props.type)}
+  // }  
+
   render(){
 
-    return <Link to={this.props.type} >  <button  onClick={this.changeColor.bind(this,this.props.id , this.props.type)} > {this.props.type}  </button> </Link>
+    return <Link to={this.props.type} > 
+     <button   >   {this.props.name}  </button> </Link>
 
       }
 

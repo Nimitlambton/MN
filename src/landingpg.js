@@ -6,10 +6,7 @@ import { BrowserRouter, Route, Link, Router } from "react-router-dom";
 import Customize from './Customize';
 import Welcomebtn from './Welcomebtn';
 
-import  pro from './pro';
-
-
-
+import Define from "./Define";
 
 
 ReactDOM.render(
@@ -20,7 +17,7 @@ ReactDOM.render(
 
   <Route path="/customize" exact component={Customize}  /> 
    <Route path="/" exact component={Welcomebtn}  />    
-   <Route path="/PreDefined" exact component={pro}/>
+   <Route path="/Define" exact component={Define}/>
 
 
   </BrowserRouter>  ,

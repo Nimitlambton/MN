@@ -36,10 +36,10 @@ class Welcomebtn extends React.Component{
       
       }} 
     >
-      <Button type = "customize"  id="0" />
+      <Button type = "customize"  id="0"  name ="customize " />
     
     
-      <Button type = "PreDefined" id="1"  />
+      <Button type = "Define" id="1"   name ="Defined "/>
     
     
       </div>
