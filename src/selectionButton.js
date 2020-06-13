@@ -1,53 +1,28 @@
 import React from 'react';
+// import ReactDOM from 'react-dom';
 import './App.css';
 
-class Buttons extends React.Component{
-  constructor() {
-    super();
-     this.type = this.type
-     this.bNo = this.bNo
-   
-    
-
-
-    }
-
-
-    changeColor(id){
+import { Redirect } from 'react-router';
+ import { BrowserRouter, Route, Link } from "react-router-dom";
+ import customize from './Customize'
  
 
-     if (id == 0){
+class Buttons extends React.Component{
 
-      alert("ypyp")
-     }else {
-
-      alert("honeysign")
-
-     } 
-
-    
-  }
+  
 
 
+    changeColor(id , _title){
+    if (id == 0){
 
-
-
-
-
-
+      
+      }   
+  }    
   render(){
 
-   
-       
-    return  <button  onClick={this.changeColor.bind(this,this.props.id)     }    > {this.props.type}  </button>
+    return <Link to={this.props.type} >  <button  onClick={this.changeColor.bind(this,this.props.id , this.props.type)} > {this.props.type}  </button> </Link>
 
-
-
-       
-       
       }
-
-
 
 }
 

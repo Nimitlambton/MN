@@ -1,41 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Button from './selectionButton';
 
-// import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Route, Link, Router } from "react-router-dom";
+import Customize from './Customize';
+import Welcomebtn from './Welcomebtn';
+
+import  pro from './pro';
+
+
 
 
 
 ReactDOM.render(
 
 
-<div     
+  <BrowserRouter>
 
-style ={{      
-    margin: "10",
-    position: "absolute",
-    top: "50%",
-    right: "50%",
-    transform: "translateY(-50%)",
-    backgroundColor:"red"
+
+  <Route path="/customize" exact component={Customize}  /> 
+   <Route path="/" exact component={Welcomebtn}  />    
+   <Route path="/PreDefined" exact component={pro}/>
+
+
+  </BrowserRouter>  ,
   
-  }} 
-
-
-
-
->
-
-
-  <Button type = "Defined"  id="0" />
-
-
-  <Button type = "Pre-Defined" id="1"  />
-  
-  
-  </div>,
-
   document.getElementById('root')
 
 );
