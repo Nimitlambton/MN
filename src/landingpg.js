@@ -16,7 +16,7 @@ ReactDOM.render(
 
 
   <Route path="/customize" exact component={Customize}  /> 
-   <Route path="/" exact component={Welcomebtn}  />    
+  <Route path="/" exact component={Welcomebtn}  />    
    <Route path="/Define" exact component={Define}/>
 
 

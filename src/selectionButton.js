@@ -9,13 +9,6 @@ import { Redirect } from 'react-router';
 
 class Buttons extends React.Component{
 
-
-
-
-
-
-
-  
   //   changeColor(id , _title){
   //   if (id == 0){
 
