@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import { BrowserRouter, Route, Link, Router } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
 import Customize from './Customize';
 import Welcomebtn from './Welcomebtn';
 

@@ -1,4 +1,6 @@
 const React = require('react')
+
+
 class Upload extends React.Component {
   constructor(props){
     super(props)
@@ -7,8 +9,10 @@ class Upload extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
   }
+
   handleChange(event) {
-     this.setState({   
+     this.setState({ 
+         
       file: URL.createObjectURL(event.target.files[0])
 
       

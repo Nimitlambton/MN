@@ -1,10 +1,8 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import './App.css';
-
-import { Redirect } from 'react-router';
- import { BrowserRouter, Route, Link } from "react-router-dom";
- import customize from './Customize'
+import {  Link } from "react-router-dom";
+ 
  
 
 class Buttons extends React.Component{
