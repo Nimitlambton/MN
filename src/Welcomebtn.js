@@ -7,20 +7,8 @@ import Button from './selectionButton';
 
 class Welcomebtn extends React.Component{
 
-  // constructor() {
-  //   super();
-    
-  //   // this.type = this.type
-  //   //  this.bNo = this.bNo
-   
-  //   }
-
-
     changeColor(id , _title){
-    if (id == 0){
-
       
-      }   
   }    
   render(){
 
