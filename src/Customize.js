@@ -1,40 +1,39 @@
 import React from 'react';
 import Button from './selectionButton';
-import ReactDOM from 'react-dom';
-
 import { fabric } from 'fabric';
-import { configure } from '@testing-library/react';
+
 
 class Customize extends React.Component{
-
-    
+        
 
     componentDidMount() {
 
         const img = this.refs.image
 
         img.onload = () => {
-
- 
-
+              
               var Testcanvas = new fabric.Canvas("imageCanvas1",{
                   
                 backgroundColor: 'rgb(100,100,200)',
+                backgroundImage:imgInstance
                 
                 
               } ).setActiveObject(Testcanvas);
+
+              Testcanvas.renderAll()
+
+             Testcanvas.remove(textbox , textbox2 ,imgInstance )
               
-
-              Testcanvas.clear()
-
 
             var imgElement = document.getElementById('hidden',{
 
        
 
             });
+
+
             var imgInstance = new fabric.Image(imgElement, {
-                 opacity: 0.85,
+
                
               });
 
@@ -60,8 +59,20 @@ class Customize extends React.Component{
 
           Testcanvas.add(textbox).setActiveObject(textbox);
           Testcanvas.add(textbox2).setActiveObject(textbox2);
-          Testcanvas.add(imgInstance);
+          Testcanvas.setBackgroundImage(imgInstance, Testcanvas.renderAll.bind(Testcanvas), {
+
+
+            backgroundImageStretch: false
+            
+            
+
+          })
          
+
+         // Testcanvas.sendBackwards(imgInstance)
+          Testcanvas.bringForward(textbox)
+          Testcanvas.bringForward(textbox2)
+
 
         
         
@@ -116,8 +127,12 @@ return  <div>
 <input type="file" onChange={this.handleChange} />
 <h1 align="center" >Customize your own meme  </h1>
 <img src={this.state.file}  height="20  " width="20"  id="hidden"  ref="image"  />
-<canvas  id="imageCanvas1"  width={500} height={500} align="center"  >  </canvas>
 
+
+
+<button onClick="" > hellow   </button>   
+    
+<canvas  id="imageCanvas1"  width={500} height={500} align="center"  >  </canvas>
 </div>  
 
 }
