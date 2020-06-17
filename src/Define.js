@@ -8,7 +8,11 @@ render(){
     return  <div>     
 <Button  type = "/"   name=" goBack"   >  goBack /></Button>
 
-<h1> Use Pre-Defined Template </h1>
+<h1   align = "center"  > Use Pre-Defined Template </h1>
+
+
+
+<img src ='logo192.png'></img>
 
 </div>  
 }
