@@ -5,23 +5,18 @@ import { fabric } from 'fabric';
 
 class Customize extends React.Component{
 
-
+   
     componentDidMount() {
-
-
-
 
 
         const img = this.refs.image
 
         img.onload = () => {
-        
-     var imgInstance = new fabric.Image(document.getElementById('hidden'))
-  
-      var Testcanvas = new fabric.Canvas("imageCanvas1",{
-        backgroundColor: 'rgb(100,100,200)',
-        backgroundImage:imgInstance
-      } )
+       var imgInstance = new fabric.Image(document.getElementById('hidden'))
+       var Testcanvas = new fabric.Canvas("imageCanvas1")
+
+
+      
 
       var textbox = new fabric.Textbox("Enter your Text", { 
         left: 50,
@@ -40,31 +35,22 @@ class Customize extends React.Component{
       }
       );
 
-      Testcanvas.remove(textbox , textbox2 ,imgInstance )
-     Testcanvas.clear()
-     var ctx = document.getElementById('imageCanvas1').getContext('2d');
-     Testcanvas.clearContext(ctx)
+    
+    
      Testcanvas.add(textbox).setActiveObject(textbox);
-    Testcanvas.add(textbox2).setActiveObject(textbox2);
-    Testcanvas.setBackgroundImage(imgInstance, Testcanvas.renderAll.bind(Testcanvas), {
-
-
-            backgroundImageStretch: false
-            
-            
-
-          })
+     Testcanvas.add(textbox2).setActiveObject(textbox2);
+    Testcanvas.setBackgroundImage(imgInstance)
          
+          
+          var img1 = Testcanvas.getActiveObject();
+          Testcanvas.remove(img1);
 
-      
-          Testcanvas.bringForward(textbox)
-          Testcanvas.bringForward(textbox2)
 
 
-        
-        
         }
 
+
+      
     
 }
 
@@ -84,17 +70,21 @@ class Customize extends React.Component{
     
       handleChange(event) {
 
-        this.setState({   
-        file: URL.createObjectURL(event.target.files[0])}
+
+
+        this.setState( {   
+        
+          file: URL.createObjectURL(event.target.files[0])}
         )
+
+
+
+
+
       }
 
       
 render(){
-
-
-
-
 return  <div>
     
 <Button  type = "/"  name=" goBack"  > </Button>
