@@ -6,7 +6,7 @@ import { BrowserRouter, Route} from "react-router-dom";
 import Customize from './Customize';
 import Welcomebtn from './Welcomebtn';
 import CustomizeDefined from './CustomizeDefined';
-
+import 'bootstrap/dist/css/bootstrap.css';
 import Define from "./Define";
 
 

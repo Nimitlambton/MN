@@ -20,14 +20,15 @@ class Welcomebtn extends React.Component{
         top: "50%",
         right: "50%",
         transform: "translateY(-50%)",
-        backgroundColor:"red"
+        backgroundColor:"red",
+      
       
       }} 
     >
-      <Button type = "customize"  id="0"  name ="customize " />
+      <Button type = "customize"  id="0"  name ="customize "  btype="primary"  size="lg"  />
     
     
-      <Button type = "Define" id="1"   name ="Defined "/>
+      <Button type = "Define"   id="1"   name ="Defined"  btype="success" size="lg"    />
     
     
       </div>
