@@ -6,7 +6,7 @@ import image1 from '/Users/nimi/Desktop/college/sem3/javascript fundamentals/pro
 import image2 from '/Users/nimi/Desktop/college/sem3/javascript fundamentals/project/meme_nator/mn/src/Assets/m2.jpeg'
 import image3 from '/Users/nimi/Desktop/college/sem3/javascript fundamentals/project/meme_nator/mn/src/Assets/m3.jpeg'
 import image4 from '/Users/nimi/Desktop/college/sem3/javascript fundamentals/project/meme_nator/mn/src/Assets/m4.jpg'
-
+import canvasToImage from 'canvas-to-image';
 
 
 class Define extends React.Component{
@@ -25,12 +25,21 @@ constructor(props){
      img.height = 200
      img.width = 200
 
-
       }
-
       handleChange3() {
          window.location.reload()}
 
+
+         handleChange2() {
+            const canvasEl = document.getElementById('imageCanvas1');
+         canvasToImage(canvasEl, {
+           name: 'myImage',
+           type: 'jpg',
+           quality: 0.7
+         })
+        
+        
+        }
       componentDidMount(){
 
 

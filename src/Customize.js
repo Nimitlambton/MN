@@ -24,13 +24,6 @@ class Customize extends React.Component{
     this.generateMEME = this.generateMEME.bind(this)
     this.reloadPage = this.reloadPage.bind(this)
   }
-
-
-
-
-
-
-
     //App State
    
     componentDidMount() {
