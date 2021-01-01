@@ -11,7 +11,7 @@ class Customize extends Component {
     return (
       <>
         <h1> Helloworld use temp </h1>
-        <input type="file"></input>
+        <input type="file" accept="image/png, image/jpeg"></input>
         <Workplace></Workplace>
         <Gbtn></Gbtn>
       </>
