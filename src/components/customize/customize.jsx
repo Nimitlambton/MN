@@ -6,12 +6,34 @@ class Customize extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.getImageData = this.getImageData.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = React.createRef();
   }
+
+  getImageData(event) {
+    console.log(this.event.data.value);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
+  }
+
   render() {
     return (
       <>
-        <h1> Helloworld use temp </h1>
-        <input type="file" accept="image/png, image/jpeg"></input>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Upload file:
+            <input type="file" ref={this.fileInput} />
+          </label>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+
         <Workplace></Workplace>
         <Gbtn></Gbtn>
       </>
