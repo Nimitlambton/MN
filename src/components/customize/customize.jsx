@@ -13,9 +13,7 @@ class Customize extends Component {
     this.fileInput = React.createRef();
   }
 
-  getImageData(event) {
-    console.log(this.event.data.value);
-  }
+  getImageData(event) {}
 
   handleSubmit(event) {
     event.preventDefault();
