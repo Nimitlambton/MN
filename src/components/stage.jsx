@@ -17,7 +17,7 @@ class Stage extends Component {
   RenderStage() {}
 
   render() {
-    console.log(this.props.type);
+    //console.log(this.props.type);
     if (this.props.type === "Customize") {
       return <Customize></Customize>;
     } else {
