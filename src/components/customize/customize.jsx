@@ -23,15 +23,6 @@ class Customize extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Upload file:
-            <input type="file" ref={this.fileInput} />
-          </label>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-
         <Workplace></Workplace>
         <Gbtn></Gbtn>
       </>
