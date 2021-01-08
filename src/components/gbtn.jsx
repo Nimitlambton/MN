@@ -6,7 +6,7 @@ class Gbtn extends Component {
     this.state = {};
   }
   render() {
-    return <button className="btn-success"> Generat </button>;
+    return <button className="btn-success"> Generate </button>;
   }
 }
 
