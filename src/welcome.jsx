@@ -24,6 +24,7 @@ class WelcomeScreen extends Component {
         <main className="container">
           <SegementedBtn onchangeType={this.handelStateType}></SegementedBtn>
           <hr></hr>
+          <Stage type={this.state.type}></Stage>
         </main>
       </>
     );
