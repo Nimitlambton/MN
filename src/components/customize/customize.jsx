@@ -9,19 +9,7 @@ class Customize extends Component {
   }
 
   componentDidMount() {
-    const fileSelect = document.getElementById("fileSelect");
-    const upload = document.getElementById("fileupload ");
-
-    fileSelect.addEventListener(
-      "click",
-      (e) => {
-        if (true) {
-          upload.click();
-        }
-        e.preventDefault(); // prevent navigation to "#"
-      },
-      false
-    );
+    this.setUpFileUpload();
   }
 
   render() {
@@ -40,6 +28,24 @@ class Customize extends Component {
           select some files to Begin
         </a>
       </>
+    );
+  }
+
+  //helper functions
+
+  //to upload image file by users
+  setUpFileUpload() {
+    const fileSelect = document.getElementById("fileSelect");
+    const upload = document.getElementById("fileupload ");
+    fileSelect.addEventListener(
+      "click",
+      (e) => {
+        if (true) {
+          upload.click();
+        }
+        e.preventDefault(); // prevent navigation to "#"
+      },
+      false
     );
   }
 }
