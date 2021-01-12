@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Customize from "./customize/customize";
-import Template from "./Template/Template";
+import Customize from "../customize/customize";
+import Template from "../Template/Template";
 
 class Stage extends Component {
   constructor(props) {

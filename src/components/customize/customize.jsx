@@ -1,23 +1,27 @@
 import React, { Component } from "react";
-import Workplace from "../workplace";
-import Gbtn from "../gbtn";
+import Workplace from "../common/workplace";
+import Gbtn from "../common/gbtn";
 
 class Customize extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-
-    this.getImageData = this.getImageData.bind(this);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.fileInput = React.createRef();
   }
 
-  getImageData(event) {}
+  componentDidMount() {
+    const fileSelect = document.getElementById("fileSelect");
+    const upload = document.getElementById("fileupload ");
 
-  handleSubmit(event) {
-    event.preventDefault();
-    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
+    fileSelect.addEventListener(
+      "click",
+      (e) => {
+        if (true) {
+          upload.click();
+        }
+        e.preventDefault(); // prevent navigation to "#"
+      },
+      false
+    );
   }
 
   render() {
@@ -25,6 +29,16 @@ class Customize extends Component {
       <>
         <Workplace></Workplace>
         <Gbtn></Gbtn>
+
+        <input
+          type="file"
+          id="fileupload "
+          accept="image/*"
+          style={{ display: "none" }}></input>
+
+        <a href="#" id="fileSelect" style={{ marginLeft: "10px" }}>
+          select some files to Begin
+        </a>
       </>
     );
   }

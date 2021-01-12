@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Navbar from "./components/navbar";
-import SegementedBtn from "./components/segmentedBtn";
-import Stage from "./components/stage";
+import Navbar from "./components/common/navbar";
+import SegementedBtn from "./components/common/segmentedBtn";
+import Stage from "./components/common/stage";
 
 class WelcomeScreen extends Component {
   constructor(props) {
