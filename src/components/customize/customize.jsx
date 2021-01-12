@@ -24,9 +24,22 @@ class Customize extends Component {
           accept="image/*"
           style={{ display: "none" }}></input>
 
-        <a href="#" id="fileSelect" style={{ marginLeft: "10px" }}>
-          select some files to Begin
-        </a>
+        <button
+          id="fileSelect"
+          type="button"
+          className="link-button"
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            cursor: "pointer",
+            textdecoration: "underline",
+            display: "inline",
+            margin: 0,
+            padding: 0,
+            color: "RED",
+          }}>
+          Press me, I look like a link
+        </button>
       </>
     );
   }
