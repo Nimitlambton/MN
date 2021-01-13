@@ -10,11 +10,21 @@ class Workplace extends Component {
 
   componentDidMount() {
     const canvas = new fabric.Canvas("workspace");
+
+    var triangle = new fabric.Triangle({
+      width: 20,
+      height: 30,
+      fill: "blue",
+      left: 50,
+      top: 50,
+    });
+
+    canvas.add(triangle);
   }
 
   render() {
     return (
-      <>
+      <div>
         <canvas
           width="500"
           height="400"
@@ -24,7 +34,7 @@ class Workplace extends Component {
 
             marginBottom: 50,
           }}></canvas>
-      </>
+      </div>
     );
   }
 }
