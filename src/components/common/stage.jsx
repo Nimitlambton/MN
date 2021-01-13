@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Customize from "../customize/customize";
 import Template from "../Template/Template";
+import "./style.css";
 
 class Stage extends Component {
   constructor(props) {
@@ -8,18 +9,12 @@ class Stage extends Component {
     this.state = {
       type: false,
     };
-
-    this.RenderStage = this.RenderStage.bind(this);
   }
-
-  componentDidMount() {}
-
-  RenderStage() {}
 
   render() {
     //console.log(this.props.type);
     if (this.props.type === "Customize") {
-      return <Customize></Customize>;
+      return <Customize> </Customize>;
     } else {
       return <Template></Template>;
     }

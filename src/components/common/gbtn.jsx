@@ -6,7 +6,13 @@ class Gbtn extends Component {
     this.state = {};
   }
   render() {
-    return <button className="btn-success"> Generate </button>;
+    return (
+      <button
+        className="btn-success"
+        style={{ marginTop: "300", marginLeft: "500px" }}>
+        Generate
+      </button>
+    );
   }
 }
 
