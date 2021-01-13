@@ -9,7 +9,9 @@ class Workplace extends Component {
   }
 
   componentDidMount() {
-    const canvas = new fabric.Canvas("workspace");
+    const canvas = new fabric.Canvas("workspace", {
+      backgroundColor: "yellow",
+    });
 
     var triangle = new fabric.Triangle({
       width: 20,
