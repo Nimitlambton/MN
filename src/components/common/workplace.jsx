@@ -21,7 +21,7 @@ class Workplace extends Component {
       top: 50,
     });
 
-    canvas.add(triangle);
+    canvas.add(text);
   }
 
   render() {
