@@ -16,12 +16,12 @@ class Workplace extends Component {
     var triangle = new fabric.Triangle({
       width: 20,
       height: 30,
-      fill: "blue",
+      fill: "red",
       left: 50,
       top: 50,
     });
 
-    canvas.add(text);
+    canvas.add(triangle);
   }
 
   render() {
