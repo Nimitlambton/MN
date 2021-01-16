@@ -9,24 +9,32 @@ class Workplace extends Component {
   }
 
   componentDidMount() {
-    const canvas = new fabric.Canvas("workspace", {
-      backgroundColor: "yellow",
+    this.canvas = new fabric.Canvas("workspace", {
+      backgroundColor: "red",
     });
 
-    var triangle = new fabric.Triangle({
-      width: 20,
-      height: 30,
-      fill: "red",
-      left: 50,
-      top: 50,
-    });
+    this.handelImageChange = this.handelImageChange.bind(this, this.canvas);
+  }
 
-    canvas.add(triangle);
+  handelImageChange(canvas) {
+    fabric.Image.fromURL(this.props.image, function (oImg) {
+      // scale image down, and flip it, before adding it onto canvas
+      oImg.scale(0.5).set("flipX", true);
+
+      canvas.add(oImg);
+    });
   }
 
   render() {
     return (
       <div>
+        <img
+          src={this.props.image}
+          height="200"
+          width="300"
+          className="selectedImage"
+          onLoad={this.handelImageChange}
+        />
         <canvas
           width="500"
           height="400"

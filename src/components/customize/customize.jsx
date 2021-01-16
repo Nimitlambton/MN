@@ -7,12 +7,27 @@ import "react-bootstrap/dist/react-bootstrap";
 class Customize extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      image: "apkiod",
+    };
+
+    this.handelonchange = this.handelonchange.bind(this);
   }
 
   componentDidMount() {
     this.setUpFileUpload();
   }
+
+  handelonchange(event) {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        this.setState({ image: e.target.result });
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
   render() {
     return (
       <>
@@ -37,7 +52,7 @@ class Customize extends Component {
 
           <br></br>
 
-          <Workplace> </Workplace>
+          <Workplace image={this.state.image}> </Workplace>
           <br></br>
           <Gbtn className="sticky-top"></Gbtn>
 
@@ -45,7 +60,8 @@ class Customize extends Component {
             type="file"
             id="fileupload "
             accept="image/*"
-            style={{ display: "none" }}></input>
+            style={{ display: "none" }}
+            onChange={this.handelonchange}></input>
         </div>
       </>
     );
