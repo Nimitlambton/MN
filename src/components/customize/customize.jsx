@@ -12,6 +12,7 @@ class Customize extends Component {
     };
 
     this.handelonchange = this.handelonchange.bind(this);
+    this.handelGenerate = this.handelGenerate.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +28,8 @@ class Customize extends Component {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
+  handelGenerate() {}
 
   render() {
     return (
@@ -54,7 +57,7 @@ class Customize extends Component {
 
           <Workplace image={this.state.image}> </Workplace>
           <br></br>
-          <Gbtn className="sticky-top"></Gbtn>
+          <Gbtn className="sticky-top" onGenerate={this.handelGenerate}></Gbtn>
 
           <input
             type="file"

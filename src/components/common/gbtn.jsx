@@ -9,7 +9,8 @@ class Gbtn extends Component {
     return (
       <button
         className="btn-success"
-        style={{ marginTop: "300", marginLeft: "500px" }}>
+        style={{ marginTop: "300", marginLeft: "500px" }}
+        onClick={this.props.onGenerate}>
         Generate
       </button>
     );
