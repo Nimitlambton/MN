@@ -13,12 +13,13 @@ class Workplace extends Component {
       backgroundColor: "red",
     });
 
-    var text = new fabric.Text("Enter your text here!", {
+    var text = new fabric.IText("Enter your text here!", {
+      fontFamily: "Cursive",
       left: 50,
       top: 0,
     });
 
-    var text2 = new fabric.Text("Enter your text here!", {
+    var text2 = new fabric.IText("Enter your text here!", {
       left: 50,
       top: 100,
     });
@@ -38,6 +39,10 @@ class Workplace extends Component {
     });
   }
 
+  componentWillReceiveProps() {
+    console.log("hellowowlr");
+  }
+
   render() {
     return (
       <div>
@@ -50,6 +55,7 @@ class Workplace extends Component {
           style={{ display: "none" }}
           alt="dummyImage"
         />
+
         <canvas
           width="500"
           height="400"
