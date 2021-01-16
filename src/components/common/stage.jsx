@@ -12,7 +12,7 @@ class Stage extends Component {
   }
 
   render() {
-    //console.log(this.props.type);
+    // use to customize  Workplace
     if (this.props.type === "Customize") {
       return <Customize> </Customize>;
     } else {

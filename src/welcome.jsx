@@ -13,6 +13,7 @@ class WelcomeScreen extends Component {
     this.handelStateType = this.handelStateType.bind(this);
   }
 
+  //set states to chnage type
   handelStateType(type) {
     this.setState({ type: type });
   }
@@ -20,10 +21,16 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <>
+        {/* navbar for brand name only */}
         <Navbar> </Navbar>
+
         <main className="container">
-          <SegementedBtn onchangeType={this.handelStateType}></SegementedBtn>
+          <SegementedBtn onchangeType={this.handelStateType}> </SegementedBtn>
+
           <hr></hr>
+
+          {/* container  to preview either customize ws or template ws  */}
+
           <Stage type={this.state.type}></Stage>
         </main>
       </>

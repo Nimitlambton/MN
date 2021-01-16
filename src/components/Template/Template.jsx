@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Workplace from "../common/workplace";
-import Gbtn from "../common/gbtn";
 
 class Template extends Component {
   constructor(props) {

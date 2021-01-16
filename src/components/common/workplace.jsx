@@ -8,6 +8,7 @@ class Workplace extends Component {
     this.state = {};
   }
 
+  //initiate fabric canvas and text1 and Text2
   componentDidMount() {
     this.canvas = new fabric.Canvas("workspace", {
       backgroundColor: "red",
@@ -16,46 +17,22 @@ class Workplace extends Component {
     var text = new fabric.IText("Enter your text here!", {
       fontFamily: "Cursive",
       left: 50,
-      top: 0,
     });
 
     var text2 = new fabric.IText("Enter your text here!", {
-      left: 50,
-      top: 100,
+      left: 60,
+      top: 340,
     });
 
     this.canvas.add(text);
     this.canvas.add(text2);
 
     this.handelImageChange = this.handelImageChange.bind(this, this.canvas);
-
     this.handelGenerate = this.handelGenerate.bind(this, this.canvas);
   }
 
-  handelImageChange(canvas) {
-    fabric.Image.fromURL(this.props.image, function (oImg) {
-      // scale image down, and flip it, before adding it onto canvas
-      oImg.scale(0.5).set("flipX", true);
-
-      canvas.add(oImg);
-    });
-  }
-
   //todo ::
-  componentWillReceiveProps() {
-    console.log("hellowowlr");
-  }
-
-  handelGenerate() {
-    var canvas = document.getElementById("workspace");
-    var image = canvas
-      .toDataURL("image/png", 1.0)
-      .replace("image/png", "image/octet-stream");
-    var link = document.createElement("a");
-    link.download = "my-image.png";
-    link.href = image;
-    link.click();
-  }
+  componentWillReceiveProps() {}
 
   render() {
     return (
@@ -83,6 +60,31 @@ class Workplace extends Component {
         <Gbtn onGenerate={this.handelGenerate}></Gbtn>
       </div>
     );
+  }
+
+  //Helping function
+
+  //Handel changes on image change and adds it to canvas
+  handelImageChange(canvas) {
+    fabric.Image.fromURL(this.props.image, function (oImg) {
+      // scale image down, and flip it, before adding it onto canvas
+      oImg.scale(0.5).set("flipX", true);
+
+      canvas.add(oImg);
+    });
+  }
+
+  //converts canvas to base64Image
+  handelGenerate() {
+    var canvas = document.getElementById("workspace");
+    var image = canvas
+      .toDataURL("image/png", 1.0)
+      .replace("image/png", "image/octet-stream");
+
+    var link = document.createElement("a");
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
   }
 }
 
