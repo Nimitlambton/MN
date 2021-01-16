@@ -13,6 +13,19 @@ class Workplace extends Component {
       backgroundColor: "red",
     });
 
+    var text = new fabric.Text("Enter your text here!", {
+      left: 50,
+      top: 0,
+    });
+
+    var text2 = new fabric.Text("Enter your text here!", {
+      left: 50,
+      top: 100,
+    });
+
+    this.canvas.add(text);
+    this.canvas.add(text2);
+
     this.handelImageChange = this.handelImageChange.bind(this, this.canvas);
   }
 
@@ -34,6 +47,8 @@ class Workplace extends Component {
           width="300"
           className="selectedImage"
           onLoad={this.handelImageChange}
+          style={{ display: "none" }}
+          alt="dummyImage"
         />
         <canvas
           width="500"
