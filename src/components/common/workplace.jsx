@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import { fabric } from "fabric";
+import Gbtn from "../common/gbtn";
 
 class Workplace extends Component {
   constructor(props) {
@@ -28,6 +28,8 @@ class Workplace extends Component {
     this.canvas.add(text2);
 
     this.handelImageChange = this.handelImageChange.bind(this, this.canvas);
+
+    this.handelGenerate = this.handelGenerate.bind(this, this.canvas);
   }
 
   handelImageChange(canvas) {
@@ -39,8 +41,20 @@ class Workplace extends Component {
     });
   }
 
+  //todo ::
   componentWillReceiveProps() {
     console.log("hellowowlr");
+  }
+
+  handelGenerate() {
+    var canvas = document.getElementById("workspace");
+    var image = canvas
+      .toDataURL("image/png", 1.0)
+      .replace("image/png", "image/octet-stream");
+    var link = document.createElement("a");
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
   }
 
   render() {
@@ -65,6 +79,8 @@ class Workplace extends Component {
 
             marginBottom: 50,
           }}></canvas>
+
+        <Gbtn onGenerate={this.handelGenerate}></Gbtn>
       </div>
     );
   }

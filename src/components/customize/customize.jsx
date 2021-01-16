@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Workplace from "../common/workplace";
-import Gbtn from "../common/gbtn";
 import "./Customizestyle.css";
 import "react-bootstrap/dist/react-bootstrap";
 
@@ -8,11 +7,9 @@ class Customize extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: "apkiod",
+      image: "",
     };
-
     this.handelonchange = this.handelonchange.bind(this);
-    this.handelGenerate = this.handelGenerate.bind(this);
   }
 
   componentDidMount() {
@@ -28,8 +25,6 @@ class Customize extends Component {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
-
-  handelGenerate() {}
 
   render() {
     return (
@@ -57,7 +52,6 @@ class Customize extends Component {
 
           <Workplace image={this.state.image}> </Workplace>
           <br></br>
-          <Gbtn className="sticky-top" onGenerate={this.handelGenerate}></Gbtn>
 
           <input
             type="file"

@@ -16,7 +16,6 @@ class Template extends Component {
         <h1> Helloworld use customize </h1>
 
         <Workplace> </Workplace>
-        <Gbtn></Gbtn>
       </div>
     );
   }
