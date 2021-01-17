@@ -4,7 +4,11 @@ import Workplace from "../common/workplace";
 class Template extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      myimage: "",
+    };
+
+    this.populateTemplates = this.populateTemplates.bind(this);
   }
 
   componentDidMount() {
@@ -26,23 +30,27 @@ class Template extends Component {
       images.src = element;
       images.height = "50";
       images.width = "50";
-      console.log(images);
+
       document.getElementById("myimg").appendChild(images);
+      images.addEventListener(
+        "click",
+        function () {
+          this.setState({ myimage: element });
+        }.bind(this)
+      );
     });
   }
 
   render() {
     return (
       <div>
-        <h1> Helloworld use customize </h1>
+        <h1> Helloworld use customize {this.state.myimage} </h1>
 
         <div
           id="myimg"
-          style={{ backgroundColor: "yellow", height: 600, width: 600 }}>
-          <h1> </h1>
-        </div>
+          style={{ backgroundColor: "yellow", height: 600, width: 600 }}></div>
 
-        <Workplace> </Workplace>
+        <Workplace image={this.state.myimage}> </Workplace>
       </div>
     );
   }

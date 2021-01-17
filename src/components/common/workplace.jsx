@@ -10,6 +10,8 @@ class Workplace extends Component {
 
   //initiate fabric canvas and text1 and Text2
   componentDidMount() {
+    console.log(this.props.myimage);
+
     this.canvas = new fabric.Canvas("workspace", {
       backgroundColor: "red",
     });
