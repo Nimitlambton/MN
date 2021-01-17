@@ -14,6 +14,12 @@ class Template extends Component {
       <div>
         <h1> Helloworld use customize </h1>
 
+        <div
+          id="images"
+          style={{ backgroundColor: "yellow", height: 500, width: 500 }}>
+          <h1> here are all the images </h1>
+        </div>
+
         <Workplace> </Workplace>
       </div>
     );
