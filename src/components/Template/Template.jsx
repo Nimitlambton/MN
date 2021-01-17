@@ -7,7 +7,29 @@ class Template extends Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.populateTemplates = this.populateTemplates.bind(this);
+    this.populateTemplates();
+  }
+
+  populateTemplates() {
+    function importAll(r) {
+      return r.keys().map(r);
+    }
+
+    const images = importAll(
+      require.context("./Templates", false, /\.(png|jpeg|svg)$/)
+    );
+
+    images.forEach((element) => {
+      var images = document.createElement("img");
+      images.src = element;
+      images.height = "50";
+      images.width = "50";
+      console.log(images);
+      document.getElementById("myimg").appendChild(images);
+    });
+  }
 
   render() {
     return (
@@ -15,9 +37,9 @@ class Template extends Component {
         <h1> Helloworld use customize </h1>
 
         <div
-          id="images"
-          style={{ backgroundColor: "yellow", height: 500, width: 500 }}>
-          <h1> here are all the images </h1>
+          id="myimg"
+          style={{ backgroundColor: "yellow", height: 600, width: 600 }}>
+          <h1> </h1>
         </div>
 
         <Workplace> </Workplace>
