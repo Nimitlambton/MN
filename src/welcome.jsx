@@ -20,20 +20,19 @@ class WelcomeScreen extends Component {
 
   render() {
     return (
-      <>
+      <div>
         {/* navbar for brand name only */}
+
         <Navbar> </Navbar>
 
-        <main className="container">
-          <SegementedBtn onchangeType={this.handelStateType}> </SegementedBtn>
-
-          <hr></hr>
+        <main className="container-fluid p-3 my-3  text-white">
+          <SegementedBtn onchangeType={this.handelStateType}></SegementedBtn>
 
           {/* container  to preview either customize ws or template ws  */}
-
+          <hr></hr>
           <Stage type={this.state.type}></Stage>
         </main>
-      </>
+      </div>
     );
   }
 }

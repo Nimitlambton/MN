@@ -46,20 +46,11 @@ class Workplace extends Component {
           height="200"
           width="300"
           className="selectedImage"
-          onLoad={this.handelImageChange}
           style={{ display: "none" }}
           alt="dummyImage"
         />
 
-        <canvas
-          width="500"
-          height="400"
-          id="workspace"
-          style={{
-            marginLeft: 350,
-
-            marginBottom: 50,
-          }}></canvas>
+        <canvas width="500" height="400" id="workspace"></canvas>
 
         <Gbtn onGenerate={this.handelGenerate}></Gbtn>
       </div>

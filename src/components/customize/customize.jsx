@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Workplace from "../common/workplace";
-import "./Customizestyle.css";
+
 import "react-bootstrap/dist/react-bootstrap";
+
+import { Row } from "react-bootstrap";
 
 class Customize extends Component {
   constructor(props) {
@@ -29,37 +31,35 @@ class Customize extends Component {
   render() {
     return (
       <>
-        <div className="stage">
-          <button
-            id="fileSelect"
-            type="button"
-            className="linkbutton"
-            style={{
-              backgroundColor: "transparent",
-              border: "none",
-              cursor: "pointer",
-              textdecoration: "underline",
-              display: "inline",
-              marginTop: 200,
-              padding: 5,
-              marginLeft: 50,
-              color: "RED",
-            }}>
-            Press to begin
-          </button>
+        <Row>
+          <div class="col-sm-4 md">
+            <button
+              id="fileSelect"
+              type="button"
+              className="linkbutton"
+              style={{
+                backgroundColor: "transparent",
+                border: "none",
+                cursor: "pointer",
+                textdecoration: "underline",
+                display: "inline",
+                color: "RED",
+              }}>
+              Press to begin
+            </button>
+          </div>
 
+          <div class="col-sm-8">
+            <Workplace image={this.state.image1}> </Workplace>
+          </div>
           <br></br>
-
-          <Workplace image={this.state.image1}> </Workplace>
-          <br></br>
-
-          <input
-            type="file"
-            id="fileupload "
-            accept="image/*"
-            style={{ display: "none" }}
-            onChange={this.handelonchange}></input>
-        </div>
+        </Row>
+        <input
+          type="file"
+          id="fileupload "
+          accept="image/*"
+          style={{ display: "none" }}
+          onChange={this.handelonchange}></input>
       </>
     );
   }

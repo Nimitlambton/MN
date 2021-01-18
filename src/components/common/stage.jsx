@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Customize from "../customize/customize";
 import Template from "../Template/Template";
-import "./style.css";
 
 class Stage extends Component {
   constructor(props) {
