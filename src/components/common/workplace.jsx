@@ -6,11 +6,13 @@ class Workplace extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    console.log("myimageis" + this.props.val);
   }
 
   //initiate fabric canvas and text1 and Text2
   componentDidMount() {
-    console.log(this.props.myimage);
+    console.log(this.props.image);
 
     this.canvas = new fabric.Canvas("workspace", {
       backgroundColor: "red",

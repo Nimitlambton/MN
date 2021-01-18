@@ -7,7 +7,7 @@ class Customize extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: "",
+      image1: "",
     };
     this.handelonchange = this.handelonchange.bind(this);
   }
@@ -20,7 +20,7 @@ class Customize extends Component {
     if (event.target.files && event.target.files[0]) {
       let reader = new FileReader();
       reader.onload = (e) => {
-        this.setState({ image: e.target.result });
+        this.setState({ image1: e.target.result });
       };
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -50,7 +50,7 @@ class Customize extends Component {
 
           <br></br>
 
-          <Workplace image={this.state.image}> </Workplace>
+          <Workplace image={this.state.image1}> </Workplace>
           <br></br>
 
           <input

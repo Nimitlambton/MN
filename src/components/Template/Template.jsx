@@ -5,7 +5,8 @@ class Template extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      myimage: "",
+      myimage: "bc",
+      val: 0,
     };
 
     this.populateTemplates = this.populateTemplates.bind(this);
@@ -50,7 +51,7 @@ class Template extends Component {
           id="myimg"
           style={{ backgroundColor: "yellow", height: 600, width: 600 }}></div>
 
-        <Workplace image={this.state.myimage}> </Workplace>
+        <Workplace image={this.state.myimage} val={this.state.val}></Workplace>
       </div>
     );
   }
