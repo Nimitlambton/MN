@@ -64,7 +64,7 @@ class Workplace extends Component {
   handelImageChange(canvas) {
     fabric.Image.fromURL(this.props.image, function (oImg) {
       // scale image down, and flip it, before adding it onto canvas
-      oImg.scale(0.5).set("flipX", true);
+      oImg.scale(0.1);
 
       canvas.add(oImg);
     });
