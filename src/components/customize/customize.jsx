@@ -3,7 +3,7 @@ import Workplace from "../common/workplace";
 
 import "react-bootstrap/dist/react-bootstrap";
 
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 class Customize extends Component {
   constructor(props) {

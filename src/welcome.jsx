@@ -3,7 +3,7 @@ import Navbar from "./components/common/navbar";
 import SegementedBtn from "./components/common/segmentedBtn";
 import Stage from "./components/common/stage";
 
-import { Container } from "react-bootstrap";
+//import { Container } from "react-bootstrap";
 
 class WelcomeScreen extends Component {
   constructor(props) {
