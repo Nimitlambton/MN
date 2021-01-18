@@ -46,6 +46,7 @@ class Workplace extends Component {
           height="200"
           width="300"
           className="selectedImage"
+          onLoad={this.handelImageChange}
           style={{ display: "none" }}
           alt="dummyImage"
         />

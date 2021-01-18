@@ -3,7 +3,7 @@ import Workplace from "../common/workplace";
 
 import "react-bootstrap/dist/react-bootstrap";
 
-import { Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 class Customize extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Customize extends Component {
     return (
       <>
         <Row>
-          <div class="col-sm-4 md">
+          <div className="col-sm-4 md">
             <button
               id="fileSelect"
               type="button"
@@ -49,7 +49,7 @@ class Customize extends Component {
             </button>
           </div>
 
-          <div class="col-sm-8">
+          <div className="col-sm-8">
             <Workplace image={this.state.image1}> </Workplace>
           </div>
           <br></br>
