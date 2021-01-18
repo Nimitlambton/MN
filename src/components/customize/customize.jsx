@@ -17,7 +17,6 @@ class Customize extends Component {
   componentDidMount() {
     this.setUpFileUpload();
   }
-
   handelonchange(event) {
     if (event.target.files && event.target.files[0]) {
       let reader = new FileReader();
