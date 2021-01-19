@@ -8,7 +8,7 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar navbar-dark bg-dark fix-top">
         <span className="navbar-brand mb h1"> Welcome to Meme-Nator</span>
       </nav>
     );

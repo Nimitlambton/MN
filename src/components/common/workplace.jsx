@@ -51,9 +51,15 @@ class Workplace extends Component {
           alt="dummyImage"
         />
 
-        <canvas width="500" height="400" id="workspace"></canvas>
-
-        <Gbtn onGenerate={this.handelGenerate}></Gbtn>
+        <div className="row">
+          <div className="col">
+            <canvas width="500" height="400" id="workspace"></canvas>{" "}
+          </div>
+          <br></br>
+          <div className="col">
+            <Gbtn onGenerate={this.handelGenerate}></Gbtn>
+          </div>
+        </div>
       </div>
     );
   }
