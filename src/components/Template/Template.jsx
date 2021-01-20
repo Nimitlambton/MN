@@ -5,7 +5,7 @@ class Template extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      myimage: "bc",
+      myimage: "",
       val: 0,
     };
 
