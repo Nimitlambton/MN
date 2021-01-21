@@ -56,9 +56,9 @@ class Template extends Component {
               height: 200,
               width: 200,
             }}></div>
-          <br />
 
           <div className="col-sm-8">
+            <br />
             <Workplace
               image={this.state.myimage}
               val={this.state.val}></Workplace>
