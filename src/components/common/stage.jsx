@@ -5,13 +5,11 @@ import Template from "../Template/Template";
 class Stage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      type: false,
-    };
+    this.state = {};
   }
 
   render() {
-    // use to customize  Workplace
+    // use to customize  Workplace on the basis of props received
     if (this.props.type === "Customize") {
       return <Customize> </Customize>;
     } else {

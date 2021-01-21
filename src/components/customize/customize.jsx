@@ -1,30 +1,22 @@
 import React, { Component } from "react";
 import Workplace from "../common/workplace";
-
 import "react-bootstrap/dist/react-bootstrap";
-
 import { Row } from "react-bootstrap";
 
 class Customize extends Component {
   constructor(props) {
     super(props);
+
+    //browse image sent to workspace to rendered
+
     this.state = {
-      image1: "",
+      image: "",
     };
     this.handelonchange = this.handelonchange.bind(this);
   }
 
   componentDidMount() {
-    this.setUpFileUpload();
-  }
-  handelonchange(event) {
-    if (event.target.files && event.target.files[0]) {
-      let reader = new FileReader();
-      reader.onload = (e) => {
-        this.setState({ image1: e.target.result });
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
+    this.setUpFileUpload(); //helping in file uploading
   }
 
   render() {
@@ -32,6 +24,7 @@ class Customize extends Component {
       <>
         <Row>
           <div className="col-sm-4 md">
+            {/* works as  button in alternate to input file  */}
             <button
               id="fileSelect"
               type="button"
@@ -48,11 +41,15 @@ class Customize extends Component {
             </button>
           </div>
 
+          {/* workspace and the main div that handel all fabric.js functions */}
+
           <div className="col-sm-8">
             <Workplace image={this.state.image1}> </Workplace>
           </div>
           <br></br>
         </Row>
+
+        {/* hidden input button */}
         <input
           type="file"
           id="fileupload "
@@ -63,12 +60,24 @@ class Customize extends Component {
     );
   }
 
-  //helper functions
+  //Helper functions
 
-  //to upload image file by users
+  //this functions handles and read file from the input type file and set states in the base64 image
+  handelonchange(event) {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        this.setState({ image: e.target.result });
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  //this functions helps in uploading user selected image  by click select file input that is hidden with the help of css
   setUpFileUpload() {
     const fileSelect = document.getElementById("fileSelect");
     const upload = document.getElementById("fileupload ");
+
     fileSelect.addEventListener(
       "click",
       (e) => {

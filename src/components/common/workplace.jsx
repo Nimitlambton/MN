@@ -6,33 +6,12 @@ class Workplace extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-
-    console.log("myimageis" + this.props.val);
   }
 
   //initiate fabric canvas and text1 and Text2
   componentDidMount() {
-    console.log(this.props.image);
-
-    this.canvas = new fabric.Canvas("workspace", {
-      backgroundColor: "red",
-    });
-
-    var text = new fabric.IText("Enter your text here!", {
-      fontFamily: "Cursive",
-      left: 50,
-    });
-
-    var text2 = new fabric.IText("Enter your text here!", {
-      left: 60,
-      top: 340,
-    });
-
-    this.canvas.add(text);
-    this.canvas.add(text2);
-
-    this.handelImageChange = this.handelImageChange.bind(this, this.canvas);
-    this.handelGenerate = this.handelGenerate.bind(this, this.canvas);
+    this.renderTextAndFabricCanvas = this.renderTextAndFabricCanvas.bind(this);
+    this.renderTextAndFabricCanvas();
   }
 
   //todo ::
@@ -41,6 +20,8 @@ class Workplace extends Component {
   render() {
     return (
       <div>
+        {/* dummy image  to clone data in to div*/}
+
         <img
           src={this.props.image}
           height="200"
@@ -51,11 +32,15 @@ class Workplace extends Component {
           alt="dummyImage"
         />
 
+        {/* workspace  Main canvas */}
         <div className="row">
           <div className="col">
-            <canvas width="500" height="400" id="workspace"></canvas>{" "}
+            <canvas width="500" height="400" id="workspace"></canvas>
           </div>
+
           <br></br>
+
+          {/* Generate btn  */}
           <div className="col">
             <Gbtn onGenerate={this.handelGenerate}></Gbtn>
           </div>
@@ -87,6 +72,30 @@ class Workplace extends Component {
     link.download = "my-image.png";
     link.href = image;
     link.click();
+  }
+
+  //This function helps to render text and fabric canvas
+
+  renderTextAndFabricCanvas() {
+    const canvas = new fabric.Canvas("workspace", {
+      backgroundColor: "red",
+    });
+
+    var text = new fabric.IText("Enter your text here!", {
+      fontFamily: "Cursive",
+      left: 50,
+    });
+
+    var text2 = new fabric.IText("Enter your text here!", {
+      left: 60,
+      top: 340,
+    });
+
+    canvas.add(text);
+    canvas.add(text2);
+
+    this.handelImageChange = this.handelImageChange.bind(this, canvas);
+    this.handelGenerate = this.handelGenerate.bind(this, canvas);
   }
 }
 

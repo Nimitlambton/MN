@@ -10,13 +10,14 @@ class WelcomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: "Customize",
+      type: "Customize", //
     };
 
     this.handelStateType = this.handelStateType.bind(this);
   }
 
-  //set states to chnage type
+  //set states to change type getting data via segmented btn and changes type of stages to be rendered
+
   handelStateType(type) {
     this.setState({ type: type });
   }
@@ -24,21 +25,20 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <>
-        <div>
-          {/* navbar for brand name only */}
+        {/* navbar for brand name only */}
 
-          <Navbar> </Navbar>
+        <Navbar> </Navbar>
 
-          <main
-            className="container-fluid p-3 my-3  text-white"
-            style={{ backgroundColor: "khaki" }}>
-            <SegementedBtn onchangeType={this.handelStateType}></SegementedBtn>
+        <main
+          className="container-fluid p-3 my-3  text-white"
+          style={{ backgroundColor: "khaki" }}>
+          <SegementedBtn onchangeType={this.handelStateType}></SegementedBtn>
 
-            {/* container  to preview either customize ws or template ws  */}
-            <hr></hr>
-            <Stage type={this.state.type}></Stage>
-          </main>
-        </div>
+          {/* container  to preview either customize ws or template ws  gets data from Segmented_btn  */}
+          <hr></hr>
+          <Stage type={this.state.type}></Stage>
+        </main>
+
         <Footer></Footer>
       </>
     );
