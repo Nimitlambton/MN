@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./components/common/navbar";
 import SegementedBtn from "./components/common/segmentedBtn";
 import Stage from "./components/common/stage";
-import Footer from "./components/common/footer";
 
 //import { Container } from "react-bootstrap";
 
@@ -38,8 +37,6 @@ class WelcomeScreen extends Component {
           <hr></hr>
           <Stage type={this.state.type}></Stage>
         </main>
-
-        <Footer></Footer>
       </>
     );
   }
