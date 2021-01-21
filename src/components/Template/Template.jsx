@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Workplace from "../common/workplace";
 
+import { Row } from "react-bootstrap";
+
 class Template extends Component {
   constructor(props) {
     super(props);
@@ -45,13 +47,22 @@ class Template extends Component {
   render() {
     return (
       <div>
-        <h1> Helloworld use customize {this.state.myimage} </h1>
+        <Row>
+          <div
+            className="col-sm-4 md"
+            id="myimg"
+            style={{
+              backgroundColor: "yellow",
+              height: 200,
+              width: 200,
+            }}></div>
 
-        <div
-          id="myimg"
-          style={{ backgroundColor: "yellow", height: 600, width: 600 }}></div>
-
-        <Workplace image={this.state.myimage} val={this.state.val}></Workplace>
+          <div className="col-sm-8">
+            <Workplace
+              image={this.state.myimage}
+              val={this.state.val}></Workplace>
+          </div>
+        </Row>
       </div>
     );
   }
