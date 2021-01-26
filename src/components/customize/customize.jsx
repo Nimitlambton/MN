@@ -44,7 +44,7 @@ class Customize extends Component {
           {/* workspace and the main div that handel all fabric.js functions */}
 
           <div className="col-sm-8">
-            <Workplace image={this.state.image1}> </Workplace>
+            <Workplace image={this.state.image}> </Workplace>
           </div>
           <br></br>
         </Row>
